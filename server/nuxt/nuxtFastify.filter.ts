@@ -10,8 +10,6 @@ import { Nuxt } from 'nuxt';
 export class NuxtFastifyFilter implements ExceptionFilter {
   private readonly nuxt: Nuxt;
 
-  private sharedProps = ['session'];
-
   constructor(nuxt: Nuxt) {
     this.nuxt = nuxt;
   }
@@ -23,14 +21,14 @@ export class NuxtFastifyFilter implements ExceptionFilter {
     const status = exception.getStatus();
 
     const sharedReq = req.raw;
+    const sharedRes = res.res;
 
-    this.sharedProps.forEach((key) => {
-      sharedReq[key] = req[key];
-    });
+    sharedReq.fastifyRequest = req;
+    sharedRes.fastifyReply = res;
 
     if (status === 404) {
       if (!res.headersSent) {
-        await this.nuxt.render(sharedReq, res.res);
+        await this.nuxt.render(sharedReq, sharedRes);
       }
     } else {
       res.status(status).json({

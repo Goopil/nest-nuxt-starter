@@ -23,7 +23,7 @@
       "@types/node",
       "@nuxt/types",
       "@nuxt/vue-app",
-      "@nuxtjs/axios/types"
+      "@nuxtjs/axios"
     ]
   }
 }
