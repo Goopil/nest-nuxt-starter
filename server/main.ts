@@ -48,10 +48,22 @@ declare const module: any;
       module.hot.dispose(() => app.close());
     }
 
+    process.on('SIGTERM', async () => {
+      log.log('[SIGTERM] received, closing app');
+
+      await nuxt.close();
+      await app.close();
+
+      log.log('[SIGTERM] App closed');
+    });
+
     process.on('SIGINT', async () => {
-      log.log('SIGINT received, closing app');
-      await app.close()
-      log.log('App closed');
+      log.log('[SIGINT] received, closing app');
+
+      await nuxt.close();
+      await app.close();
+
+      log.log('[SIGINT] App closed');
     });
   } catch (e) {
     log.error(e.message, e.trace);
