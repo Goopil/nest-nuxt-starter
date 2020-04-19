@@ -17,8 +17,7 @@ import { User } from '@common/UserInterface';
 export default class YourComponent extends Vue {
   users: User[] = [];
 
-  // @ts-ignore
-  async asyncData({ $axios }) {
+  async asyncData({ $axios }: Context) {
     const {data: users} = await $axios.get('users')
 
     return { users }
