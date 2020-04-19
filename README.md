@@ -41,19 +41,30 @@ you can use webpack alias (defined in each tsconfig.json and shared with [tsconf
 
 ### Http adapter
 
-### express
+You can choose from your adapter from the 2 supported by nestjs. This starter implements both express and fastify.
+When you are desided, you should clear the other.
 
+* Remove the ` @nestjs/plafetorm-xxx` and the respective `@types` packages from your package.json
+* Remove the related filter in `server/nuxt`
 
-* Express
-* Fastify
+### sharing data between nuxt and nest via req / res attributes
 
+you can augment the data passed to nuxt ctx via the filter located in (`server/nuxt`). when you are done, do not forget to complet the `client/connect-shim.d.ts` to have proper auto completion.
+By default, this project implement the fastify adapter. The `FastifyRequest` and `FastifyReply` are accessible.
 
+* definition: `client/connect-shim.d.ts`
+* injection: `server/nuxt/nuxtFastify.filter.ts`
 
-> The integration with fastify works well, but you should take in to account that setting up shared data between nest and nuxt via the `req` / `res` is by no mean easy.
+update to suit your needs.
 
 ### Settings
 
-the server settings are injected via process.env and are located in the `nuxt.config.ts`
+the server settings like PORT, HOST and HOSTNAME are injected via process.env and are located in the `nuxt.config.ts`
+
+### Production
+
+Two option here, you will find a multistage dockerfile ready to be used and a pm2 config or you could also go for the classic (node dist/server/main.js)
+in the later case, do not forget to set `process.env.NODE_ENV` as `production`. Otherwise, the Nuxt server would rebuild !
 
 ## Contributing
 
