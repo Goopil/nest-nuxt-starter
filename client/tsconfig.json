@@ -19,10 +19,6 @@
       "@common/*": ["./common/*"],
       "@server/*": ["./server/*"]
     },
-    "types": [
-      "@types/node",
-      "@nuxt/types",
-      "@nuxtjs/axios"
-    ]
+    "types": ["@types/node", "@nuxt/types", "@nuxtjs/axios"]
   }
 }

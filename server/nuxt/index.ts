@@ -63,7 +63,7 @@ export default class NuxtServer {
 
   async close() {
     if (this.nuxt) {
-      await this.nuxt.close()
+      await this.nuxt.close();
     }
   }
 }

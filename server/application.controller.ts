@@ -10,8 +10,6 @@ export class AppController {
 
   @Get('/users')
   async fetchAll(): Promise<User[]> {
-    return [
-      {name: 'John'}
-    ]
+    return [{ name: 'John' }];
   }
 }

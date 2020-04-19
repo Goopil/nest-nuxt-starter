@@ -18,9 +18,9 @@ export default class YourComponent extends Vue {
   users: User[] = [];
 
   async asyncData({ $axios }: Context) {
-    const {data: users} = await $axios.get('users')
+    const { data: users } = await $axios.get('users');
 
-    return { users }
+    return { users };
   }
 }
 </script>
