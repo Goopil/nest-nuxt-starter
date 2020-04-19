@@ -30,6 +30,17 @@ you can use webpack alias (defined in each tsconfig.json and shared with [tsconf
 * `@client`
 * `@common`
 
+## getting started
+
+This project provide to plateform integration.
+
+* Express
+* Fastify
+
+you should chose a plateform and remove the other. Same for the filter located in `server/nuxt`
+
+> The integration with fastify works well, but you should take in to account that setting up shared data between nest and nuxt via the `req` / `res` is by no mean easy.
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
