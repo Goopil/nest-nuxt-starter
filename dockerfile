@@ -28,18 +28,22 @@ WORKDIR /app
 RUN yarn global add \
   pm2
 
-COPY --from=build /app/dist/ /app/dist/
-RUN ls -la /app/dist/
+COPY \
+ --chown=node:node \
+ --from=build \
+ /app/dist/ /app/dist/
 
-COPY ./yarn.lock /app/
-COPY ./package.json /app/
-COPY ./ecosystem.config.js /app/
+COPY --chown=node:node ./yarn.lock /app/
+COPY --chown=node:node ./package.json /app/
+COPY --chown=node:node ./ecosystem.config.js /app/
 
 RUN yarn install \
     --pure-lockfile \
     --production
 
 RUN yarn cache clean
+
+USER node
 
 EXPOSE ${PORT}
 
