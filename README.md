@@ -5,7 +5,7 @@
 
 # Nestjs Nuxt starter
 
-This project is an updated version of this repository [https://github.com/ColonelBundy/nuxtjs-nestjs-starter](https://github.com/ColonelBundy/nuxtjs-nestjs-starter)
+This project is an updated version of this repository [nuxtjs-nestjs-starter](https://github.com/ColonelBundy/nuxtjs-nestjs-starter)
 With some minor changes. The cli of nestjs was used and is configured correctly. Each nest cli command should generate the proper file at the right place.
 A big thanks to [ColonelBundy](https://github.com/ColonelBundy) for showing a good way to tie these 2 great framework together.
 
@@ -32,6 +32,14 @@ you can use webpack alias (defined in each tsconfig.json and shared with [tsconf
 
 ## getting started
 
+### command
+
+* `yarn install`
+* `yarn start:dev`
+* `yarn build`
+* `yarn start`
+
+### Http adapter
 This project provide to plateform integration.
 
 * Express
@@ -40,6 +48,10 @@ This project provide to plateform integration.
 you should chose a plateform and remove the other. Same for the filter located in `server/nuxt`
 
 > The integration with fastify works well, but you should take in to account that setting up shared data between nest and nuxt via the `req` / `res` is by no mean easy.
+
+### Settings
+
+the server settings are injected via process.env and are located in the `nuxt.config.ts`
 
 ## Contributing
 

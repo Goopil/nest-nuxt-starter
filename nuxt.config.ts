@@ -1,3 +1,5 @@
+import { resolve } from 'path';
+
 const {
   NODE_ENV,
   PORT: port = 3001,
@@ -7,8 +9,6 @@ const {
 
 const isDev = !(NODE_ENV === 'production');
 const baseURL = `${domain}:${port}`;
-
-import { resolve } from 'path';
 
 const configFile = resolve(process.cwd(), 'client', 'tsconfig.json');
 
