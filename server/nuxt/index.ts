@@ -6,11 +6,11 @@ import { Logger } from '@nestjs/common';
 
 const log = new Logger('NuxtServer');
 
-export default class NuxtServer {
+export class NuxtServer {
   private static instance: NuxtServer;
   public nuxt: Nuxt;
 
-  public async run(shouldBuild: boolean = true): Nuxt {
+  public async run(shouldBuild: boolean = true): Promise<Nuxt> {
     const willBuild = config.dev && shouldBuild;
     const nuxt = new Nuxt(config);
     await nuxt.ready();
@@ -35,12 +35,11 @@ export default class NuxtServer {
   }
 
   public static getInstance(): NuxtServer {
-    if (this.instance) {
-      return this.instance;
-    } else {
+    if (!this.instance) {
       this.instance = new NuxtServer();
-      return this.instance;
     }
+
+    return this.instance;
   }
 
   private init(nuxt: Nuxt): Nuxt {
@@ -61,7 +60,7 @@ export default class NuxtServer {
     return nuxt;
   }
 
-  async close() {
+  async close(): Promise<void> {
     if (this.nuxt) {
       await this.nuxt.close();
     }

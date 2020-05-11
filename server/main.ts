@@ -9,7 +9,7 @@ import { NuxtFastifyFilter } from './nuxt/nuxtFastify.filter';
 
 // import { NuxtExpressFilter } from './nuxt/nuxtExpress.filter';
 
-import NuxtServer from './nuxt';
+import { NuxtServer } from './nuxt';
 import config from '../nuxt.config';
 
 import { ApplicationModule } from './application.module';
