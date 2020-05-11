@@ -10,6 +10,7 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator';
 import { Context } from '@nuxt/types';
+import '@nuxtjs/axios/types'
 
 import { User } from '@common/UserInterface';
 
