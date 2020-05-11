@@ -14,7 +14,10 @@ export class NuxtExpressFilter implements ExceptionFilter {
     this.nuxt = nuxt;
   }
 
-  public async catch(exception: HttpException, host: ArgumentsHost): Promise<void> {
+  public async catch(
+    exception: HttpException,
+    host: ArgumentsHost,
+  ): Promise<void> {
     const ctx = host.switchToHttp();
     const res = ctx.getResponse();
     const req = ctx.getRequest();

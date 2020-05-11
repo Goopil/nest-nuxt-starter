@@ -1,8 +1,6 @@
 import { Nuxt, Builder } from 'nuxt';
-
-import config from '../../nuxt.config';
-
 import { Logger } from '@nestjs/common';
+import config from '../../nuxt.config';
 
 const log = new Logger('NuxtServer');
 
