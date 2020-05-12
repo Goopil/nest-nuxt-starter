@@ -24,10 +24,8 @@ declare const module: any;
       config.dev ? !module.hot._main : true,
     );
 
-    const app = await NestFactory.create<NestFastifyApplication>(
-      ApplicationModule,
-      new FastifyAdapter(),
-    );
+    const app = await NestFactory.create<NestFastifyApplication>(ApplicationModule, new FastifyAdapter());
+    app.useGlobalFilters(new NuxtFastifyFilter(nuxt));
 
     // const app = await NestFactory.create(ApplicationModule);
     // app.useGlobalFilters(new NuxtExpressFilter(nuxt));
@@ -38,7 +36,7 @@ declare const module: any;
       const signals = ['SIGTERM', 'SIGINT'] as const;
       signals.forEach(signal => {
         process.on(signal, async () => {
-          log.log(`[${signal}] received, closing app`);
+          log.log(`[${signal}] received, closing App`);
 
           await nuxt.close();
           await app.close();
@@ -48,17 +46,15 @@ declare const module: any;
       })
     }
 
-    app.useGlobalFilters(new NuxtFastifyFilter(nuxt));
+    if (module.hot) {
+      module.hot.accept();
+      module.hot.dispose(() => app.close());
+    }
 
     await app.listen(config.env.port as number, config.env.host, () => {
       log.log(`Server listening at ${config.env.host}:${config.env.port}`);
       log.log(`Server listening at ${config.env.domain}`);
     });
-
-    if (module.hot) {
-      module.hot.accept();
-      module.hot.dispose(() => app.close());
-    }
   } catch (e) {
     log.error(e.message, e.trace);
   }
