@@ -13,7 +13,7 @@
     "paths": {
       "@server/*": ["server/*"],
       "@client/*": ["client/*"],
-      "@common/*": ["common/*"],
+      "@common/*": ["common/*"]
     }
   },
   "exclude": ["node_modules", "dist"]

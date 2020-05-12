@@ -24,16 +24,28 @@ declare const module: any;
       config.dev ? !module.hot._main : true,
     );
 
-    // const app = await NestFactory.create(ApplicationModule);
-    // app.useGlobalFilters(new NuxtExpressFilter(nuxt));
-
     const app = await NestFactory.create<NestFastifyApplication>(
       ApplicationModule,
       new FastifyAdapter(),
     );
 
+    // const app = await NestFactory.create(ApplicationModule);
+    // app.useGlobalFilters(new NuxtExpressFilter(nuxt));
+
     if (!config.dev) {
       app.enableShutdownHooks();
+
+      const signals = ['SIGTERM', 'SIGINT'] as const;
+      signals.forEach(signal => {
+        process.on(signal, async () => {
+          log.log(`[${signal}] received, closing app`);
+
+          await nuxt.close();
+          await app.close();
+
+          log.log(`[${signal}] App closed`);
+        });
+      })
     }
 
     app.useGlobalFilters(new NuxtFastifyFilter(nuxt));
@@ -47,24 +59,6 @@ declare const module: any;
       module.hot.accept();
       module.hot.dispose(() => app.close());
     }
-
-    process.on('SIGTERM', async () => {
-      log.log('[SIGTERM] received, closing app');
-
-      await nuxt.close();
-      await app.close();
-
-      log.log('[SIGTERM] App closed');
-    });
-
-    process.on('SIGINT', async () => {
-      log.log('[SIGINT] received, closing app');
-
-      await nuxt.close();
-      await app.close();
-
-      log.log('[SIGINT] App closed');
-    });
   } catch (e) {
     log.error(e.message, e.trace);
   }
