@@ -12,7 +12,7 @@
     "start:dev": "cross-env NODE_ENV=development yarn prebuild && webpack --config webpack-hmr.config.js",
     "start": "cross-env NODE_ENV=production node dist/server/main",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
