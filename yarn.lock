@@ -1171,13 +1171,13 @@
     "@angular-devkit/schematics" "9.0.6"
     fs-extra "8.1.0"
 
-"@nestjs/testing@7.0.9":
-  version "7.0.9"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-7.0.9.tgz#c6b342dd34f060f18406bd7eb753edc5ecbb35c7"
-  integrity sha512-dbcnKV5QfYkdyxVXuvRb/435MB/vP+OPqC3h4o3wb/39cL0EU7duANoMzjHxfI0K4kQCsM9iIbeNGFOAOaEBDA==
+"@nestjs/testing@7.3.1":
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-7.3.1.tgz#dd1d152ce7d843bafed498f3f6ec57246b40fcd2"
+  integrity sha512-95u/S2CMBr3bxzt0C4FE6uKPmTQJAAEnARFzNwoWBJgRnMixMZ81+eYGr8CwNcHLsiyHlX4N4Sq5W111XBNzLQ==
   dependencies:
     optional "0.1.4"
-    tslib "1.11.1"
+    tslib "2.0.0"
 
 "@nuxt/babel-preset-app@2.12.2":
   version "2.12.2"
@@ -11473,12 +11473,17 @@ tsconfig-paths@3.9.0, tsconfig-paths@^3.4.0:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tslib@1.11.1, tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@1.11.1:
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
   integrity sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
 
-tslib@^1, tslib@^1.11.1, tslib@^1.9.3:
+tslib@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.0.tgz#18d13fc2dce04051e20f074cc8387fd8089ce4f3"
+  integrity sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
+
+tslib@^1, tslib@^1.10.0, tslib@^1.11.1, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.11.2"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.2.tgz#9c79d83272c9a7aaf166f73915c9667ecdde3cc9"
   integrity sha512-tTSkux6IGPnUGUd1XAZHcpu85MOkIl5zX49pO+jfsie3eP0B6pyhOlLXm3cAC6T7s+euSDDUUV+Acop5WmtkVg==
