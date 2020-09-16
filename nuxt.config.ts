@@ -9,11 +9,10 @@ const {
 
 const isDev = !(NODE_ENV === 'production');
 const baseURL = `${domain}:${port}`;
-
 const configFile = resolve(process.cwd(), 'client', 'tsconfig.json');
 
 export default {
-  mode: 'universal',
+  telemetry: false,
   modern: isDev ? false : 'client',
 
   srcDir: 'client/',
@@ -27,7 +26,6 @@ export default {
   },
 
   dev: isDev,
-
   globalName: 'root',
 
   loading: false,
@@ -76,7 +74,9 @@ export default {
 
   typescript: {
     typeCheck: {
-      tsconfig: configFile
+      typescript: {
+        configFile
+      }
     },
 
     loaders: {
