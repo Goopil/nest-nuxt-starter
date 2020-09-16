@@ -14,6 +14,6 @@ declare module 'connect' {
  */
 declare module 'http' {
   export interface ServerResponse {
-    fastifyReply: FastifyReply<ServerResponse>;
+    fastifyReply: FastifyReply;
   }
 }

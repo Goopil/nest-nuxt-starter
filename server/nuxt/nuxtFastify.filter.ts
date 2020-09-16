@@ -24,7 +24,7 @@ export class NuxtFastifyFilter implements ExceptionFilter {
     const status = exception.getStatus();
 
     const sharedReq = req.raw;
-    const sharedRes = res.res;
+    const sharedRes = res.raw;
 
     sharedReq.fastifyRequest = req;
     sharedRes.fastifyReply = res;
