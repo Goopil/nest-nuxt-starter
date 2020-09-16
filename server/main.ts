@@ -1,18 +1,14 @@
 import { NestFactory } from '@nestjs/core';
 import { Logger } from '@nestjs/common';
 
-import {
-  FastifyAdapter,
-  NestFastifyApplication,
-} from '@nestjs/platform-fastify';
+import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 import { NuxtFastifyFilter } from './nuxt/nuxtFastify.filter';
-
-// import { NuxtExpressFilter } from './nuxt/nuxtExpress.filter';
-
 import { NuxtServer } from './nuxt';
 import config from '../nuxt.config';
 
 import { ApplicationModule } from './application.module';
+
+// import { NuxtExpressFilter } from './nuxt/nuxtExpress.filter';
 
 const log = new Logger('Bootstrap');
 
@@ -20,9 +16,9 @@ declare const module: any;
 
 (async function bootstrap() {
   try {
-    const nuxt = await NuxtServer.getInstance().run(
-      config.dev ? !module.hot._main : true,
-    );
+    const shouldBuild = config.dev ? !module.hot._main : true;
+    log.debug(`should build ${shouldBuild}`)
+    const nuxt = await NuxtServer.getInstance().run(shouldBuild);
 
     const app = await NestFactory.create<NestFastifyApplication>(ApplicationModule, new FastifyAdapter());
     app.useGlobalFilters(new NuxtFastifyFilter(nuxt));
@@ -43,7 +39,7 @@ declare const module: any;
 
           log.log(`[${signal}] App closed`);
         });
-      })
+      });
     }
 
     if (module.hot) {
