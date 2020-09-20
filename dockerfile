@@ -8,11 +8,19 @@ WORKDIR /app
 COPY ./package.json /app
 COPY ./yarn.lock /app
 
+RUN apk add --no-cache python make g++
+
 RUN yarn install
 
 COPY . /app/
 
 RUN yarn run build
+
+RUN yarn install \
+    --pure-lockfile \
+    --production
+
+RUN yarn cache clean
 
 # production container
 FROM node:lts-alpine
@@ -25,23 +33,14 @@ ENV NODE_ENV=production \
 RUN mkdir -p /app
 WORKDIR /app
 
-RUN yarn global add \
-  pm2
+RUN yarn global add pm2
 
-COPY \
- --chown=node:node \
- --from=build \
- /app/dist/ /app/dist/
+COPY --chown=node:node --from=build /app/dist/ /app/dist/
+COPY --chown=node:node --from=build /app/node_modules/ /app/node_modules/
 
 COPY --chown=node:node ./yarn.lock /app/
 COPY --chown=node:node ./package.json /app/
 COPY --chown=node:node ./ecosystem.config.js /app/
-
-RUN yarn install \
-    --pure-lockfile \
-    --production
-
-RUN yarn cache clean
 
 USER node
 
