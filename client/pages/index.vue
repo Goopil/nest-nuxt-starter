@@ -8,20 +8,15 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator';
-import { Context } from '@nuxt/types';
-import '@nuxtjs/axios';
-
+import { Component, Vue } from 'nuxt-property-decorator';
 import { User } from '@common/UserInterface';
 
 @Component
 export default class YourComponent extends Vue {
   users: User[] = [];
 
-  async asyncData({ $axios }: Context) {
-    const { data: users } = await $axios.get('users');
-
-    return { users };
+  async fetch() {
+    this.users = (await this.$axios.get('users'))?.data ?? [];
   }
 }
 </script>
