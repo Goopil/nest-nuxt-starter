@@ -1,4 +1,4 @@
-import { Get, Controller } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { User } from '@common/UserInterface';
 
 @Controller()
@@ -10,6 +10,10 @@ export class AppController {
 
   @Get('/users')
   async fetchAll(): Promise<User[]> {
-    return [{ name: 'John' }];
+    return new Array(1000)
+      .fill(undefined)
+      .map((_, index) => ({
+        name: 'user' + index,
+      }));
   }
 }
