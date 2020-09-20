@@ -9,7 +9,6 @@ const {
 } = process.env;
 
 const isDev = !(NODE_ENV === 'production');
-const baseURL = `${domain}:${port}`;
 const configFile = resolve(process.cwd(), 'client', 'tsconfig.json');
 
 export default {
@@ -66,8 +65,16 @@ export default {
     'nuxt-precompress'
   ],
 
-  axios: {
-    baseURL,
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL: '/'
+    }
+  },
+
+  privateRuntimeConfig: {
+    axios: {
+      baseURL: `http://127.0.0.1:${port}`
+    }
   },
 
   nuxtPrecompress: {
