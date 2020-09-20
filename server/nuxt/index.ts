@@ -41,12 +41,9 @@ export class NuxtServer {
   }
 
   private init(nuxt: Nuxt): Nuxt {
-    nuxt.hook('render:setupMiddleware', (app) =>
-      app.use((req, res, next) => {
-        log.debug(`path called ${req.url}`);
-        next();
-      }),
-    );
+    nuxt.hook('render:route', (url) => {
+        log.debug(`path called ${url}`)
+    });
 
     nuxt.hook('render:errorMiddleware', (app) =>
       app.use((err, req, res, next) => {
