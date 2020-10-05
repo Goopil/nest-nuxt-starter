@@ -50,7 +50,7 @@
     "@types/supertest": "2.0.10",
     "cross-env": "7.0.2",
     "fork-ts-checker-webpack-plugin": "5.2.0",
-    "jest": "26.4.2",
+    "jest": "26.5.0",
     "prettier": "2.1.2",
     "rimraf": "3.0.2",
     "snyk": "1.398.1",
