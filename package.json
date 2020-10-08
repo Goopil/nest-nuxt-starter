@@ -27,7 +27,7 @@
     "@nuxtjs/axios": "5.12.2",
     "fastify-compress": "3.3.0",
     "iltorb": "2.4.5",
-    "node-zopfli-es": "1.0.6",
+    "node-zopfli-es": "1.0.7",
     "nuxt": "2.14.5",
     "nuxt-precompress": "0.5.2",
     "nuxt-property-decorator": "2.8.3",
