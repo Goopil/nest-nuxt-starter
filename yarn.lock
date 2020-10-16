@@ -5463,14 +5463,14 @@ fast-safe-stringify@2.0.7, fast-safe-stringify@^2.0.7:
   resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-2.0.7.tgz#124aa885899261f68aedb42a7c080de9da608743"
   integrity sha512-Utm6CdzT+6xsDk2m8S6uL8VHxNwI6Jub+e9NYTcAms28T84pTa25GJQV9j0CY0N1rM8hK4x6grpF2BQf+2qwVA==
 
-fastify-compress@3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/fastify-compress/-/fastify-compress-3.3.0.tgz#83c4965048d77e9469128de25f77064b38bad06e"
-  integrity sha512-g/q7g9JaN14pVe7Op8zwKD/MxyBBXjLkK8Y6UtcwRDwufAlqLO1jZ/srM5JTly5AKnXPnX6ft9Nz/83xYNltrQ==
+fastify-compress@3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/fastify-compress/-/fastify-compress-3.3.1.tgz#505aa8f74e54171ac8721b609d0e52cc7574bb77"
+  integrity sha512-1QJkxm02iC+acgwSgN+6lj5MsiVucz0jmDDQF8PRQp8EdJvblpRSJCau7zuB4Hhg7tRZrLWY9CVVeNXJaVO5nA==
   dependencies:
     encoding-negotiator "^2.0.0"
     fastify-plugin "^2.2.0"
-    into-stream "^5.1.1"
+    into-stream "^6.0.0"
     is-deflate "^1.0.0"
     is-gzip "^2.0.0"
     is-stream "^2.0.0"
@@ -6685,10 +6685,10 @@ interpret@^1.0.0, interpret@^1.4.0:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.4.0.tgz#665ab8bc4da27a774a40584e812e3e0fa45b1a1e"
   integrity sha512-agE4QfB2Lkp9uICn7BAqoscw4SZP9kTE2hxiFI3jBPmXJfdqiahTbUuKGsMoN2GtqL9AxhYioAcVvgsb1HvRbA==
 
-into-stream@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/into-stream/-/into-stream-5.1.1.tgz#f9a20a348a11f3c13face22763f2d02e127f4db8"
-  integrity sha512-krrAJ7McQxGGmvaYbB7Q1mcA+cRwg9Ij2RfWIeVesNBgVDZmzY/Fa4IpZUT3bmdRzMzdf/mzltCG2Dq99IZGBA==
+into-stream@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/into-stream/-/into-stream-6.0.0.tgz#4bfc1244c0128224e18b8870e85b2de8e66c6702"
+  integrity sha512-XHbaOAvP+uFKUFsOgoNPRjLkwB+I22JFPFe5OjTkQ0nwgj6+pSjb4NmB6VMxaPshLiOf+zcpOCBQuLwC1KHhZA==
   dependencies:
     from2 "^2.3.0"
     p-is-promise "^3.0.0"
