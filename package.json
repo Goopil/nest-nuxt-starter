@@ -25,7 +25,7 @@
     "@nestjs/platform-express": "7.4.4",
     "@nestjs/platform-fastify": "7.4.4",
     "@nuxtjs/axios": "5.12.2",
-    "fastify-compress": "3.3.0",
+    "fastify-compress": "3.4.0",
     "iltorb": "2.4.5",
     "node-zopfli-es": "1.0.6",
     "nuxt": "2.14.5",
