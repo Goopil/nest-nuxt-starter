@@ -20,9 +20,6 @@ declare const module: any;
     log.debug(`should build ${shouldBuild}`)
     const nuxt = await NuxtServer.getInstance().run(shouldBuild);
     const fastify = new FastifyAdapter()
-    fastify.register(
-      require('fastify-compress')
-    )
 
     const app = await NestFactory.create<NestFastifyApplication>(ApplicationModule, fastify);
     app.useGlobalFilters(new NuxtFastifyFilter(nuxt));
