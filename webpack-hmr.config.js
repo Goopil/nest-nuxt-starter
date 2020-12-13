@@ -29,7 +29,7 @@ module.exports = {
       }
     ],
   },
-  mode: 'development',
+  mode: process.env.NODE_ENV === 'production' ? 'production': 'development',
   resolve: {
     plugins: [new TsconfigPathsPlugin()],
     extensions: ['.tsx', '.ts', '.js'],
