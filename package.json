@@ -20,9 +20,9 @@
     "snyk-protect": "snyk protect"
   },
   "dependencies": {
-    "@nestjs/common": "7.6.1",
-    "@nestjs/core": "7.6.1",
-    "@nestjs/platform-express": "7.6.1",
+    "@nestjs/common": "7.6.3",
+    "@nestjs/core": "7.6.3",
+    "@nestjs/platform-express": "7.6.3",
     "@nestjs/platform-fastify": "7.6.1",
     "@nuxtjs/axios": "5.12.3",
     "nuxt": "2.14.5",
