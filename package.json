@@ -23,7 +23,7 @@
     "@nestjs/common": "7.6.1",
     "@nestjs/core": "7.6.1",
     "@nestjs/platform-express": "7.6.1",
-    "@nestjs/platform-fastify": "7.6.1",
+    "@nestjs/platform-fastify": "7.6.12",
     "@nuxtjs/axios": "5.12.3",
     "nuxt": "2.14.5",
     "nuxt-property-decorator": "2.8.8",
