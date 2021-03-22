@@ -48,7 +48,7 @@
     "jest": "26.6.3",
     "prettier": "2.2.1",
     "rimraf": "3.0.2",
-    "snyk": "1.436.0",
+    "snyk": "1.503.0",
     "supertest": "6.0.1",
     "ts-jest": "26.4.4",
     "ts-loader": "8.0.12",
