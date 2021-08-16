@@ -13,7 +13,7 @@ export class AppController {
     return new Array(1000)
       .fill(undefined)
       .map((_, index) => ({
-        name: 'user' + index,
+        name: `user ${index}`,
       }));
   }
 }

@@ -25,7 +25,7 @@ export default {
   },
 
   dev: isDev,
-  globalName: 'root',
+  globalName: 'app',
 
   loading: false,
   loadingIndicator: false,
@@ -98,8 +98,7 @@ export default {
    */
   build: {
     cache: true,
-    extractCSS: true,
-    publicPath: '/bundles/',
+    publicPath: '/app/',
 
     /*
      ** You can extend webpack config here

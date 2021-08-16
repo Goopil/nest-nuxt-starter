@@ -1,16 +1,17 @@
 const webpack = require('webpack');
+const path = require('path');
 const nodeExternals = require('webpack-node-externals');
-const WebpackShellPlugin = require('webpack-shell-plugin');
+const { RunScriptWebpackPlugin } = require('run-script-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
-  entry: ['webpack/hot/poll?1000', './server/main.ts'],
+  entry: ['webpack/hot/poll?100', './server/main.ts'],
   watch: true,
   target: 'node',
   externals: [
     nodeExternals({
-      allowlist: ['webpack/hot/poll?1000'],
+      allowlist: ['webpack/hot/poll?100'],
     }),
   ],
   module: {
@@ -29,18 +30,18 @@ module.exports = {
       }
     ],
   },
-  mode: process.env.NODE_ENV === 'production' ? 'production': 'development',
+  mode: 'development',
   resolve: {
     plugins: [new TsconfigPathsPlugin()],
     extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new ForkTsCheckerWebpackPlugin(),
-    new WebpackShellPlugin({ onBuildEnd: ['node dist/main.js'] }),
+    new webpack.HotModuleReplacementPlugin(),
+    new RunScriptWebpackPlugin({ name: 'server.js' }),
   ],
   output: {
-    path: `${__dirname}/dist`,
-    publicPath: '/',
+    path: path.join(__dirname, 'dist'),
+    filename: 'server.js',
   },
 };
