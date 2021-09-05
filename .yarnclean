@@ -45,3 +45,4 @@ wercker.yml
 *.md
 
 .git/
+!istanbul-reports/lib/html/assets
