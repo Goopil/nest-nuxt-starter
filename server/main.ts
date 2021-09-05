@@ -17,7 +17,6 @@ declare const module: any;
 (async function bootstrap() {
     try {
         const shouldBuild = config.dev ? !module.hot._main : false;
-        log.debug(`should build ${shouldBuild}`)
         const nuxt = await NuxtServer.getInstance().run(shouldBuild);
         const fastify = new FastifyAdapter()
 
