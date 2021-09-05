@@ -34,12 +34,14 @@ declare const module: any;
             process.on(signal, async () => {
                 log.log(`[${signal}] received, closing App`);
 
-                await Promise.all([
+                await Promise.allSettled([
                     nuxt.close(),
                     app.close()
                 ])
 
                 log.log(`[${signal}] App closed`);
+
+                return Promise.resolve();
             });
         });
 
