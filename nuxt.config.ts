@@ -1,8 +1,8 @@
 import { resolve } from 'path';
 
 const {
-  NODE_ENV,
-  PORT: port = 3001,
+  NODE_ENV = 'production',
+  PORT: port = 3002,
   HOST: host = '0.0.0.0',
   DOMAIN: domain = 'http://localhost',
 } = process.env;
