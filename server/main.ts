@@ -16,33 +16,32 @@ declare const module: any;
 
 (async function bootstrap() {
     try {
-        const shouldBuild = config.dev ? !module.hot._main : false;
+        const shouldBuild = config.dev ? module.hot._main : false;
         const nuxt = await NuxtServer.getInstance().run(shouldBuild);
         const fastify = new FastifyAdapter()
 
         const app = await NestFactory.create<NestFastifyApplication>(ApplicationModule, fastify, {bufferLogs: true});
         app.useGlobalFilters(new NuxtFastifyFilter(nuxt));
-        app.useLogger(log);
+
         // const app = await NestFactory.create(ApplicationModule);
         // app.useGlobalFilters(new NuxtExpressFilter(nuxt));
 
-        if (!config.dev) {
-            app.enableShutdownHooks();
+        app.useLogger(log);
+        app.enableShutdownHooks();
 
-            const signals = ['SIGTERM', 'SIGINT'] as const;
-            signals.forEach(signal => {
-                process.on(signal, async () => {
-                    log.log(`[${signal}] received, closing App`);
+        const signals = ['SIGTERM', 'SIGINT'] as const;
+        signals.forEach(signal => {
+            process.on(signal, async () => {
+                log.log(`[${signal}] received, closing App`);
 
-                    await Promise.all([
-                        nuxt.close(),
-                        app.close()
-                    ])
+                await Promise.all([
+                    nuxt.close(),
+                    app.close()
+                ])
 
-                    log.log(`[${signal}] App closed`);
-                });
+                log.log(`[${signal}] App closed`);
             });
-        }
+        });
 
         await app.listen(config.env.port as number, config.env.host, () => {
             log.log(`Server listening at ${config.env.host}:${config.env.port}`);
