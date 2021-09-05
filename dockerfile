@@ -1,6 +1,6 @@
 # build stage
 
-FROM node:lts-alpine as  build
+FROM node:lts-alpine as build
 
 RUN mkdir -p /app
 WORKDIR /app
@@ -21,6 +21,7 @@ RUN yarn install \
     --production
 
 RUN yarn cache clean
+RUN yarn autoclean
 
 # production container
 FROM node:lts-alpine
