@@ -2,7 +2,7 @@
   <div>
     <h1>index</h1>
     <ul class="user-list">
-      <li v-for="user in users" :key="i">
+      <li v-for="(user, i) in users" :key="i">
         <span>{{ user.name }}</span>
       </li>
     </ul>
