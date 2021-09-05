@@ -13,6 +13,7 @@ const configFile = resolve(process.cwd(), 'client', 'tsconfig.json');
 export default {
   telemetry: false,
   modern: isDev ? false : 'client',
+  target: 'server',
 
   srcDir: 'client/',
   buildDir: 'dist/client',
@@ -121,6 +122,9 @@ export default {
   },
 
   render: {
+    compression: false,
+    resourceHints: true,
+    ssr: true,
     http2: { push: true }
   },
 };
