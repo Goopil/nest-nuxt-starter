@@ -10,6 +10,12 @@ export class NuxtServer {
 
   public async run(shouldBuild: boolean = true): Promise<Nuxt> {
     const willBuild = config.dev && shouldBuild;
+
+    if (this.nuxt) {
+      log.debug('reusing');
+      return this.nuxt;
+    }
+
     const nuxt = new Nuxt(config);
     await nuxt.ready();
 
@@ -21,11 +27,6 @@ export class NuxtServer {
       this.nuxt = res.nuxt;
 
       return this.init(res.nuxt);
-    }
-
-    if (this.nuxt) {
-      log.debug('reusing');
-      return this.nuxt;
     }
 
     log.debug('fresh instance');
