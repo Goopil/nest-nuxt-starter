@@ -123,7 +123,7 @@ export default {
   },
 
   render: {
-    compression: false,
+    compressor: false,
     resourceHints: true,
     ssr: true,
     http2: { push: true }
