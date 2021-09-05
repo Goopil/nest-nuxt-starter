@@ -1,7 +1,25 @@
 version: '3.4'
 
 services:
-  app:
-    build: .
+  proxy.prod:
+    build:
+      context: proxy
+      dockerfile: dockerfile
+    volumes:
+      - ./proxy/certs:/etc/nginx/certs
     ports:
-      - 80:80
+      - '80:80'
+      - '443:443'
+      - '443:443/udp'
+    depends_on:
+      - app.prod
+    networks:
+      - default
+
+  app.prod:
+    build: .
+    networks:
+      - default
+
+networks:
+  default:

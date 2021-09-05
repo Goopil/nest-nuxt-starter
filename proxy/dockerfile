@@ -1,0 +1,11 @@
+# Base Nginx HTTP/3 Image
+FROM ranadeeppolavarapu/nginx-http3:latest
+
+ENV BACKEND_HOST=app.prod
+
+COPY ./start.sh /start.sh
+COPY ./nginx.conf /etc/nginx/
+COPY ./proxy.nginx.conf /template/
+
+CMD ["sh", "/start.sh"]
+

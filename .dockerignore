@@ -6,4 +6,4 @@ node_modules/
 .github/
 .snyk
 *.md
-webpack-hmr.config.js
+proxy/
