@@ -20,9 +20,6 @@ RUN yarn install \
     --pure-lockfile \
     --production
 
-RUN yarn cache clean
-RUN yarn autoclean
-
 # production container
 FROM node:lts-alpine
 
