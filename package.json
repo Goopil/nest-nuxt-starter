@@ -8,9 +8,10 @@
   "main": "dist/server/main.js",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "cross-env mode=production NODE_ENV=production yarn prebuild && nuxt-ts build && nest build",
+    "predev": "rimraf dist",
+    "build": "cross-env mode=production NODE_ENV=production concurrently \"nuxt build\" \"nest build\"",
     "format": "prettier --write \"server/**/*.ts\" \"client/**/*\" \"test/**/*.ts\"",
-    "start:dev": "cross-env NODE_ENV=development yarn prebuild && webpack --config webpack-hmr.config.js",
+    "dev": "cross-env NODE_ENV=development webpack --config webpack-hmr.config.js",
     "start": "cross-env NODE_ENV=production node dist/server/main",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "test": "jest --passWithNoTests",
@@ -61,7 +62,8 @@
     "typescript": "4.4.2",
     "webpack": "4.46.0",
     "webpack-cli": "4.8.0",
-    "webpack-node-externals": "3.0.0"
+    "webpack-node-externals": "3.0.0",
+    "concurrently": "6.2.1"
   },
   "jest": {
     "moduleFileExtensions": [

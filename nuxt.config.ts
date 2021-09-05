@@ -30,7 +30,6 @@ export default {
   loading: false,
   loadingIndicator: false,
 
-
   /*
    ** Headers of the page
    */
