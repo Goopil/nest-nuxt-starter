@@ -116,6 +116,10 @@ export default {
     },
   },
 
+  server:{
+    timing: false
+  },
+
   render: {
     http2: { push: true }
   },
