@@ -4,7 +4,7 @@ services:
   proxy.prod:
     build:
       context: proxy
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
     volumes:
       - ./proxy/certs:/etc/nginx/certs
     ports:
