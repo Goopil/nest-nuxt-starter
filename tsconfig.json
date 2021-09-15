@@ -21,11 +21,14 @@
     },
     "typeRoots": [
       "node_modules/@types",
-      "client"
+      "client",
+      "server"
     ],
     "types": [
       "@nuxt/types",
-      "@nuxtjs/axios"
+      "@nuxtjs/axios",
+      "reflect-metadata",
+      "jest"
     ]
   },
   "exclude": ["dist"]
