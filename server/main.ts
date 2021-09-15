@@ -2,10 +2,10 @@ import {Logger} from '@nestjs/common';
 import {NestFactory} from '@nestjs/core';
 
 import {FastifyAdapter, NestFastifyApplication} from '@nestjs/platform-fastify';
-import config from '../nuxt.config';
+import {config} from '../nuxt.config';
 
 import {ApplicationModule} from './application.module';
-import {NuxtServer} from './nuxt';
+import {NuxtServer} from './nuxt/NuxtServer';
 import {NuxtFastifyFilter} from './nuxt/nuxtFastify.filter';
 
 // import { NuxtExpressFilter } from './nuxt/nuxtExpress.filter';
@@ -45,8 +45,8 @@ declare const module: any;
             });
         });
 
-        await app.listen(config.env.port as number, config.env.host, () => {
-            log.log(`Server listening at ${config.env.host}:${config.env.port}`);
+        await app.listen(config?.env.port, config?.env.host, () => {
+            log.log(`Server listening at ${config?.env.host}:${config.env.port}`);
             log.log(`Server listening at ${config.env.domain}`);
         });
 
@@ -54,7 +54,7 @@ declare const module: any;
             module.hot.accept();
             module.hot.dispose(() => app.close());
         }
-    } catch (e) {
+    } catch (e: any) {
         log.error(e.message, e.trace);
     }
 })();

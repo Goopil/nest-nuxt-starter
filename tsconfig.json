@@ -19,8 +19,11 @@
       "@common/*": ["common/*"],
       "~/*": ["./client/*"]
     },
+    "typeRoots": [
+      "node_modules/@types",
+      "client"
+    ],
     "types": [
-      "@types/node",
       "@nuxt/types",
       "@nuxtjs/axios"
     ]

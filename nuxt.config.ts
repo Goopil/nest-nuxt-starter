@@ -1,8 +1,9 @@
+import {NuxtConfig} from '@nuxt/types';
 import { resolve } from 'path';
 
 const {
   NODE_ENV = 'production',
-  PORT: port = 3002,
+  PORT: port = 3003,
   HOST: host = '0.0.0.0',
   DOMAIN: domain = 'http://localhost',
 } = process.env;
@@ -10,7 +11,7 @@ const {
 const isDev = !(NODE_ENV === 'production');
 const configFile = resolve(process.cwd(), 'client', 'tsconfig.json');
 
-export default {
+export const config: NuxtConfig = {
   telemetry: false,
   modern: isDev ? false : 'client',
   target: 'server',
@@ -20,8 +21,8 @@ export default {
 
   env: {
     NODE_ENV,
-    port,
-    host,
+    port: port as string,
+    host: host as string,
     domain,
   },
 
@@ -104,14 +105,15 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
+    extend(cfg, ctx) {
       // config.resolve.alias.vue = 'vue/dist/vue.common'
 
       if (isDev) {
         const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+        cfg.resolve = (cfg.resolve || {})
 
-        config.resolve.plugins = [
-          ...(config.resolve.plugins || []),
+        cfg.resolve.plugins = [
+          ...(cfg.resolve.plugins || []),
           new TsconfigPathsPlugin({ configFile }),
         ];
       }
@@ -128,4 +130,4 @@ export default {
     ssr: true,
     http2: { push: true }
   },
-};
+}
