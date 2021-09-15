@@ -1,25 +1,10 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "target": "es2018",
     "module": "esnext",
     "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "lib": ["esnext", "esnext.asynciterable", "dom"],
-    "esModuleInterop": true,
-    "importHelpers": true,
     "allowJs": true,
-    "sourceMap": true,
-    "strict": true,
-    "noEmit": true,
-    "baseUrl": "../",
-    "rootDir": "../",
-    "paths": {
-      "~/*": ["./client/*"],
-      "@client/*": ["./client/*"],
-      "@common/*": ["./common/*"],
-      "@server/*": ["./server/*"]
-    },
-    "types": ["@types/node", "@nuxt/types", "@nuxtjs/axios"]
+    "noEmit": true
   }
 }

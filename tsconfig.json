@@ -11,12 +11,19 @@
     "sourceMap": true,
     "outDir": "./dist/",
     "baseUrl": "./",
+    "rootDir": "./",
     "incremental": true,
     "paths": {
       "@server/*": ["server/*"],
       "@client/*": ["client/*"],
-      "@common/*": ["common/*"]
-    }
+      "@common/*": ["common/*"],
+      "~/*": ["./client/*"]
+    },
+    "types": [
+      "@types/node",
+      "@nuxt/types",
+      "@nuxtjs/axios"
+    ]
   },
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["dist"]
 }
