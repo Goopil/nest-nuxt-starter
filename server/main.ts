@@ -2,7 +2,7 @@ import {Logger} from '@nestjs/common';
 import {NestFactory} from '@nestjs/core';
 
 import {FastifyAdapter, NestFastifyApplication} from '@nestjs/platform-fastify';
-import {config} from '../nuxt.config';
+import {config} from './nuxt/nuxt.config';
 
 import {ApplicationModule} from './application.module';
 import {NuxtServer} from './nuxt/NuxtServer';

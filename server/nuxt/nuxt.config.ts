@@ -131,3 +131,5 @@ export const config: NuxtConfig = {
     http2: { push: true }
   },
 }
+
+export default config;

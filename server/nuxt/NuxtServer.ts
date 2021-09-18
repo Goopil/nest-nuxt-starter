@@ -4,7 +4,7 @@ import {IncomingMessage, NextFunction, Server as ConnectServer} from 'connect';
 import {ServerResponse} from 'http';
 
 import {Builder, Nuxt} from 'nuxt';
-import {config} from '../../nuxt.config';
+import {config} from './nuxt.config';
 
 const log = new Logger('NuxtServer');
 

@@ -9,7 +9,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "predev": "rimraf dist",
-    "build": "cross-env mode=production NODE_ENV=production concurrently \"nuxt build\" \"nest build --webpack --webpackPath webpack.config.js\"",
+    "build": "cross-env mode=production NODE_ENV=production concurrently \"nuxt build -c server/nuxt/nuxt.config.ts\" \"nest build --webpack --webpackPath webpack.config.js\"",
     "format": "prettier --write \"server/**/*.ts\" \"client/**/*\" \"test/**/*.ts\"",
     "dev": "cross-env NODE_ENV=development nest build --webpack --webpackPath webpack.config.js --watch",
     "start": "node dist/server/main",
