@@ -28,21 +28,20 @@ export class NuxtServer {
             return this.nuxt;
         }
 
-        const nuxt = new Nuxt(config as NuxtConfig);
-        await nuxt.ready();
+        log.debug('creating');
+        this.nuxt = new Nuxt(config as NuxtConfig);
+        await this.nuxt.ready();
+
+        this.init(this.nuxt);
 
         // Build only in dev mode
         if (willBuild) {
             log.debug('building');
-            const builder = new Builder(nuxt);
-            const res = await builder.build();
-            this.nuxt = res.nuxt;
-
-            return this.init(res.nuxt);
+            const builder = new Builder(this.nuxt);
+            await builder.build();
         }
 
-        log.debug('fresh instance');
-        return this.init(nuxt);
+        return this.nuxt;
     }
 
     async close(): Promise<void> {
