@@ -20,6 +20,8 @@ COPY . /app/
 
 RUN yarn run build
 
+COPY ./.yarnclean.prod /app/.yarnclean
+
 RUN rm -rf node_modules && \
   NODE_ENV=production yarn install \
   --prefer-offline \

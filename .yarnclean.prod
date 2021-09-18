@@ -23,6 +23,7 @@ coverage
 Makefile
 Gulpfile.js
 Gruntfile.js
+webpack.config.js
 
 # configs
 appveyor.yml
@@ -44,5 +45,4 @@ wercker.yml
 # misc
 *.md
 
-.git/
-!istanbul-reports/lib/html/assets
+.git
