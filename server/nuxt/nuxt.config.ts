@@ -13,7 +13,7 @@ const configFile = resolve(process.cwd(), 'client', 'tsconfig.json');
 
 export const config: NuxtConfig = {
   telemetry: false,
-  modern: isDev ? false : 'client',
+  modern: isDev ? false : 'server',
   target: 'server',
 
   srcDir: 'client/',
