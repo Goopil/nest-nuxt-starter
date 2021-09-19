@@ -47,7 +47,6 @@ declare const module: any;
 
         await app.listen(config?.env.port, config?.env.host, () => {
             log.log(`Server listening at ${config?.env.host}:${config.env.port}`);
-            log.log(`Server listening at ${config.env.domain}`);
         });
 
         if (module.hot) {

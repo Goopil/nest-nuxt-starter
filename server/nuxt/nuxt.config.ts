@@ -4,8 +4,7 @@ import { resolve } from 'path';
 const {
   NODE_ENV = 'production',
   PORT: port = 3003,
-  HOST: host = '0.0.0.0',
-  DOMAIN: domain = 'http://localhost',
+  HOST: host = '0.0.0.0'
 } = process.env;
 
 const isDev = !(NODE_ENV === 'production');
@@ -22,8 +21,7 @@ export const config: NuxtConfig = {
   env: {
     NODE_ENV,
     port: port as string,
-    host: host as string,
-    domain,
+    host: host as string
   },
 
   dev: isDev,
