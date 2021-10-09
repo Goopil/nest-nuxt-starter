@@ -27,6 +27,7 @@
     "@nestjs/platform-fastify": "8.0.11",
     "@nuxtjs/axios": "5.13.6",
     "nuxt": "2.15.8",
+    "nuxt-precompress": "0.5.9",
     "nuxt-property-decorator": "2.9.1",
     "reflect-metadata": "0.1.13",
     "rxjs": "7.4.0",
