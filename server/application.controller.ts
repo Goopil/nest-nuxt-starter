@@ -10,10 +10,8 @@ export class AppController {
 
   @Get('/users')
   async fetchAll(): Promise<User[]> {
-    return new Array(1000)
-      .fill(undefined)
-      .map((_, index) => ({
-        name: `user ${index}`,
-      }));
+    return new Array(1000).fill(undefined).map((_, index) => ({
+      name: `user ${index}`,
+    }));
   }
 }

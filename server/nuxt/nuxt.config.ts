@@ -1,10 +1,10 @@
-import {NuxtConfig} from '@nuxt/types';
+import { NuxtConfig } from '@nuxt/types';
 import { resolve } from 'path';
 
 const {
   NODE_ENV = 'production',
   PORT: port = 3003,
-  HOST: host = '0.0.0.0'
+  HOST: host = '0.0.0.0',
 } = process.env;
 
 const isDev = !(NODE_ENV === 'production');
@@ -21,7 +21,7 @@ export const config: NuxtConfig = {
   env: {
     NODE_ENV,
     port: port as string,
-    host: host as string
+    host: host as string,
   },
 
   dev: isDev,
@@ -41,9 +41,7 @@ export const config: NuxtConfig = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'description' },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   /*
@@ -59,26 +57,21 @@ export const config: NuxtConfig = {
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    '@nuxtjs/axios',
-    'nuxt-precompress'
-  ],
+  modules: ['@nuxtjs/axios', 'nuxt-precompress'],
 
   publicRuntimeConfig: {
     axios: {
-      browserBaseURL: '/'
-    }
+      browserBaseURL: '/',
+    },
   },
 
   privateRuntimeConfig: {
     axios: {
-      baseURL: `http://127.0.0.1:${port}`
-    }
+      baseURL: `http://127.0.0.1:${port}`,
+    },
   },
 
-  buildModules: [
-    '@nuxt/typescript-build',
-  ],
+  buildModules: ['@nuxt/typescript-build'],
 
   nuxtPrecompress: {
     enabled: true, // Enable in production
@@ -146,7 +139,7 @@ export const config: NuxtConfig = {
 
       if (isDev) {
         const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-        cfg.resolve = (cfg.resolve || {})
+        cfg.resolve = cfg.resolve || {};
 
         cfg.resolve.plugins = [
           ...(cfg.resolve.plugins || []),
@@ -156,16 +149,16 @@ export const config: NuxtConfig = {
     },
   },
 
-  server:{
-    timing: false
+  server: {
+    timing: false,
   },
 
   render: {
     compressor: false,
     resourceHints: true,
     ssr: true,
-    http2: { push: true }
+    http2: { push: true },
   },
-}
+};
 
 export default config;
