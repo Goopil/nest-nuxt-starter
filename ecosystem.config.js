@@ -3,16 +3,25 @@ const {
   main: script
 } = require('./package');
 
-const os = require('os');
+const {
+    CLUSTER_MODE ='false'
+} = process.env;
 
-console.log(`starting app with ${os.cpus().length} cpu`);
+const isClusterMode = CLUSTER_MODE === 'true'
+
+if (isClusterMode) {
+    const os = require('os');
+    console.log(`starting app in multi threaded mode. Using ${os.cpus().length} cpus`);
+} else {
+    console.log(`starting app in single threaded mode.`);
+}
 
 module.exports = {
   apps: [{
       name,
       script,
-      instances : 'all',
-      exec_mode : 'cluster',
+      instances : isClusterMode ? '0' : '1',
+      exec_mode : isClusterMode ? 'cluster' : 'fork',
       autorestart: true,
       watch: false,
       max_memory_restart: '1G',
