@@ -8,8 +8,6 @@ WORKDIR /app
 COPY ./package.json /app
 COPY ./yarn.lock /app
 
-RUN apk add --no-cache python make g++
-
 RUN yarn install \
   --prefer-offline \
   --frozen-lockfile \
@@ -30,7 +28,7 @@ RUN rm -rf node_modules && \
   --production=true
 
 # production container
-FROM node:lts-alpine
+FROM node:lts-alpine as production
 
 RUN yarn global add pm2
 
