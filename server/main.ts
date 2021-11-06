@@ -5,11 +5,11 @@ import {
   FastifyAdapter,
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
-import { config } from './nuxt/nuxt.config';
 
 import { ApplicationModule } from './application.module';
-import { NuxtServer } from './nuxt/NuxtServer';
+import { config } from './nuxt/nuxt.config';
 import { NuxtFastifyFilter } from './nuxt/nuxtFastify.filter';
+import { NuxtServer } from './nuxt/NuxtServer';
 
 // import { NuxtExpressFilter } from './nuxt/nuxtExpress.filter';
 
@@ -37,16 +37,21 @@ declare const module: any;
     app.enableShutdownHooks();
 
     const signals = ['SIGTERM', 'SIGINT'] as const;
+
     signals.forEach((signal) => {
-      process.on(signal, async () => {
+      const listener = async () => {
         log.log(`[${signal}] received, closing App`);
 
         await Promise.allSettled([nuxt.close(), app.close()]);
 
         log.log(`[${signal}] App closed`);
 
+        process.off(signal, listener);
+
         return Promise.resolve();
-      });
+      };
+
+      process.on(signal, listener);
     });
 
     await app.listen(config?.env.port, config?.env.host, () => {
