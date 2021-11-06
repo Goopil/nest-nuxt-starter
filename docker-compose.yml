@@ -11,6 +11,9 @@ services:
       - '80:80'
       - '443:443'
       - '443:443/udp'
+    environment:
+      BACKEND_HOST: 'app.prod'
+      HOST_NAME: 'localhost'
     depends_on:
       - app.prod
     networks:
@@ -18,6 +21,8 @@ services:
 
   app.prod:
     build: .
+    environment:
+      CLUSTER_MODE: 'true'
     networks:
       - default
 
