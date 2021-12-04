@@ -41,7 +41,7 @@ declare const module: any;
             const listener = async () => {
                 log.log(`[${signal}] received, closing App`);
 
-                await Promise.allSettled([nuxt.close(), app.close()]);
+                await Promise.allSettled([nuxt.close()]);
 
                 log.log(`[${signal}] App closed`);
 
