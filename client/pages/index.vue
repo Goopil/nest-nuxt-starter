@@ -18,8 +18,8 @@
 </style>
 
 <script lang="ts">
-import {User} from '@common/UserInterface';
-import {Component, Vue} from 'nuxt-property-decorator';
+import { User } from '@common/UserInterface';
+import { Component, Vue } from 'nuxt-property-decorator';
 
 @Component
 export default class YourComponent extends Vue {
