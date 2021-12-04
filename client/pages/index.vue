@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>index</h1>
+    <button @click="fetchUsers()" :disabled="loading">refresh</button>
     <ul class="user-list">
       <li v-for="(user, i) in users" :key="i">
         <span>{{ user.name }}</span>
@@ -17,15 +18,26 @@
 </style>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator';
-import { User } from '@common/UserInterface';
+import {User} from '@common/UserInterface';
+import {Component, Vue} from 'nuxt-property-decorator';
 
 @Component
 export default class YourComponent extends Vue {
   users: User[] = [];
+  loading: boolean = false;
 
   async fetch() {
-    this.users = (await this.$axios.get('users'))?.data ?? [];
+    return this.fetchUsers();
+  }
+
+  async fetchUsers() {
+    try {
+      this.loading = true;
+
+      this.users = (await this.$axios.get('users'))?.data ?? [];
+    } finally {
+      this.loading = false;
+    }
   }
 }
 </script>
