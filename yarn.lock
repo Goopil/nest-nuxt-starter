@@ -1295,15 +1295,15 @@
     multer "1.4.3"
     tslib "2.3.1"
 
-"@nestjs/platform-fastify@8.2.3":
-  version "8.2.3"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-fastify/-/platform-fastify-8.2.3.tgz#7680f2247863b22c4d376de8078399ffd78c36f1"
-  integrity sha512-uZelasRb99Rgq6h7QLWXlFdx8lqf3M/ln+1XzVPaWbJza4eUSo1f3BvrO4r1V/OKZLgW7pyB1CM2P4lKLMK1cA==
+"@nestjs/platform-fastify@8.2.4":
+  version "8.2.4"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-fastify/-/platform-fastify-8.2.4.tgz#1ae758092d92fdc857958cd0553c144620b12e2e"
+  integrity sha512-KO+SR/tvaBh8K2t9W9u9Hj/kEt6hIOD0aFS24eHF3QmkO51wSJKxf32KeSjSw0xLyFqsFdCyyU+KE+0AkKyIPg==
   dependencies:
-    fastify "3.24.0"
+    fastify "3.24.1"
     fastify-cors "6.0.2"
     fastify-formbody "5.2.0"
-    light-my-request "4.6.0"
+    light-my-request "4.7.0"
     middie "5.3.0"
     path-to-regexp "3.2.0"
     tslib "2.3.1"
@@ -5183,10 +5183,10 @@ fastify-warning@^0.2.0:
   resolved "https://registry.yarnpkg.com/fastify-warning/-/fastify-warning-0.2.0.tgz#e717776026a4493dc9a2befa44db6d17f618008f"
   integrity sha512-s1EQguBw/9qtc1p/WTY4eq9WMRIACkj+HTcOIK1in4MV5aFaQC9ZCIt0dJ7pr5bIf4lPpHvAtP2ywpTNgs7hqw==
 
-fastify@3.24.0:
-  version "3.24.0"
-  resolved "https://registry.yarnpkg.com/fastify/-/fastify-3.24.0.tgz#38b64e6a2f459dacda4a8342306b0882de534b58"
-  integrity sha512-fmRyrI25rzLGHDQ1FME02NsbP658mVa0EaSqfYUFwx2UOF+4/GcyNrsdWILSDOEiUbOsRYCD3sRCE9v7mvRLRQ==
+fastify@3.24.1:
+  version "3.24.1"
+  resolved "https://registry.yarnpkg.com/fastify/-/fastify-3.24.1.tgz#979d34e096f40b7a90e90733efbbdae81623034e"
+  integrity sha512-ZL0V6u37d65tAY8lMwVMFtFvnEeJcG80QBNSdChqCm4i4x+is/38OU14gzJuRXhpenTL+pTJzNcu5Kn1ouzM3Q==
   dependencies:
     "@fastify/ajv-compiler" "^1.0.0"
     abstract-logging "^2.0.0"
@@ -7184,10 +7184,10 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-light-my-request@4.6.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/light-my-request/-/light-my-request-4.6.0.tgz#a647db40952e8829ec34f89acce83fce321daf6b"
-  integrity sha512-wQWGwMr7l7fzYPzzzutRoEI1vuREpIpJpTi3t8cHlGdsnBrOF5iR559Bkh+nkDGgnUJtNuuutjnqbxP7zPWKkA==
+light-my-request@4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/light-my-request/-/light-my-request-4.7.0.tgz#5bacd17fa0eaf96fe5eed1682c5e0d361953cf46"
+  integrity sha512-LTa8YZp3K2AUpqUnwwKajoIHcsKOBnzwJNQSrk7unziPwo6CjOYjyO0F9wfkxFvP+nBsCGe3eMPnedVgIIgdAw==
   dependencies:
     ajv "^8.1.0"
     cookie "^0.4.0"
