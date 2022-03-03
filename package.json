@@ -31,7 +31,7 @@
     "nuxt-precompress": "0.5.9",
     "nuxt-property-decorator": "2.9.1",
     "reflect-metadata": "0.1.13",
-    "rxjs": "7.5.3",
+    "rxjs": "7.5.4",
     "tslib": "2.3.1"
   },
   "devDependencies": {
