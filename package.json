@@ -22,9 +22,9 @@
     "audit:fix": "npm_config_yes=true npx yarn-audit-fix"
   },
   "dependencies": {
-    "@nestjs/common": "8.2.6",
-    "@nestjs/core": "8.2.6",
-    "@nestjs/platform-express": "8.2.6",
+    "@nestjs/common": "8.3.0",
+    "@nestjs/core": "8.3.0",
+    "@nestjs/platform-express": "8.3.0",
     "@nestjs/platform-fastify": "8.2.6",
     "@nuxtjs/axios": "5.13.6",
     "nuxt": "2.15.8",
