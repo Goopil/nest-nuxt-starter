@@ -7,3 +7,6 @@ node_modules/
 .snyk
 *.md
 proxy/
+test/
+dockerfile
+docker-compose.yml
