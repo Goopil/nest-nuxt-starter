@@ -3,7 +3,7 @@
     <h1>index</h1>
     <button @click="fetchUsers()" :disabled="loading">refresh</button>
     <ul class="user-list">
-      <li v-for="(user, i) in users" :key="i">
+      <li v-for="user in users" :key="user.id">
         <span>{{ user.name }}</span>
       </li>
     </ul>

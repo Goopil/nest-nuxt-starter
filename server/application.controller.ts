@@ -1,8 +1,11 @@
 import { Controller, Get } from '@nestjs/common';
 import { User } from '@common/UserInterface';
+import { ApplicationService } from '@server/application.service';
 
 @Controller()
 export class ApplicationController {
+  constructor(private readonly appService: ApplicationService) {}
+
   @Get('/ping')
   ping(): string {
     return 'pong';
@@ -10,8 +13,6 @@ export class ApplicationController {
 
   @Get('/users')
   async fetchAll(): Promise<User[]> {
-    return new Array(1000).fill(undefined).map((_, index) => ({
-      name: `user ${index}`,
-    }));
+    return this.appService.fetchAll();
   }
 }
