@@ -28,7 +28,6 @@
     "@nestjs/platform-express": "8.4.0",
     "@nestjs/platform-fastify": "8.4.0",
     "@nuxtjs/axios": "5.13.6",
-    "ansi-html": "0.0.9",
     "nuxt": "2.15.8",
     "nuxt-precompress": "0.5.9",
     "nuxt-property-decorator": "2.9.1",
@@ -63,5 +62,8 @@
     "webpack": "4.46.0",
     "webpack-cli": "4.9.2",
     "webpack-node-externals": "3.0.0"
+  },
+  "resolutions": {
+    "ansi-html": ">=0.0.8"
   }
 }
