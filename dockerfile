@@ -1,6 +1,7 @@
-# build stage
+ARG NODE_IMAGE=node:lts-alpine
 
-FROM node:lts-alpine as build
+# build stage
+FROM $NODE_IMAGE as build
 
 RUN mkdir -p /app
 WORKDIR /app
@@ -28,14 +29,13 @@ RUN rm -rf node_modules && \
   --production=true
 
 # production container
-FROM node:lts-alpine as production
+FROM $NODE_IMAGE as production
 
 RUN yarn global add pm2
 
 ENV NODE_ENV=production \
     HOST=0.0.0.0 \
-    PORT=80 \
-    DOMAIN=http://localhost
+    PORT=80
 
 EXPOSE ${PORT}
 
