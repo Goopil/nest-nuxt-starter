@@ -14,11 +14,12 @@
     "dev": "cross-env NODE_ENV=development nest build --webpack --webpackPath webpack.config.js --watch",
     "start": "node dist/server/main",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "test": "jest --passWithNoTests",
-    "test:watch": "jest --watch",
-    "test:cov": "jest --coverage --passWithNoTests",
-    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "test": "jest --config test/jest.config.js --passWithNoTests",
+    "test:watch": "yarn test --watch",
+    "test:cov": "yarn test --coverage",
+    "e2e": "jest --config ./test/jest-e2e.config.js",
+    "e2e:watch": "yarn e2e --watch",
+    "e2e:cov": "yarn e2e --coverage",
     "audit:fix": "npm_config_yes=true npx yarn-audit-fix"
   },
   "dependencies": {
@@ -63,19 +64,5 @@
     "webpack": "4.46.0",
     "webpack-cli": "4.9.2",
     "webpack-node-externals": "3.0.0"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": ".",
-    "testRegex": ".spec.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "coverageDirectory": "./coverage",
-    "testEnvironment": "node"
   }
 }
