@@ -17,6 +17,6 @@ module.exports = {
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
   },
-  "coverageDirectory": "../coverage",
+  "coverageDirectory": "./coverage",
   "testEnvironment": "node"
 }
