@@ -1,5 +1,7 @@
 function acceptJson(headers) {
-  return ['/json', '+json'].some((segment) => (headers.accept || '').includes(segment));
+  return ['/json', '+json'].some((segment) =>
+    (headers.accept || '').includes(segment),
+  );
 }
 
 function isXmlHttpRequest(headers) {
