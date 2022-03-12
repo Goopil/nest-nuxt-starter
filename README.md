@@ -2,11 +2,11 @@
 ![Docker Image Build](https://github.com/Goopil/nest-nuxt-starter/workflows/Docker%20Image%20CI/badge.svg)
 
 <p align="center">
-  <a href="https://nuxtjs.org/ target="blank"><img align="center" style="width:320px" alt="Nuxt Logo" src="https://nuxtjs.org/meta_400.png"/></a>
+  <a href="https://nuxtjs.org/ target="blank"><img align="center" style="width:320px" alt="Nuxt Logo" src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Nuxt_logo.svg"/></a>
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
 
-# Nestjs Nuxt starter
+# Nestjs Nuxt (2.x) starter
 
 This project is an updated version of this repository [nuxtjs-nestjs-starter](https://github.com/ColonelBundy/nuxtjs-nestjs-starter)
 With some minor changes. The cli of nestjs was used and is configured correctly. Each nest cli command should generate the proper file at the right place.
@@ -14,6 +14,7 @@ A big thanks to [ColonelBundy](https://github.com/ColonelBundy) for showing a go
 
 This is a full typescript project and use yarn as the packager. (not tested with npm but should work regardless)
 
+The 
 ## Project structure
 
 ```
@@ -68,6 +69,16 @@ the server settings like PORT, HOST and HOSTNAME are injected via process.env an
 
 Two option here, you will find a multistage dockerfile ready to be used and a pm2 config or you could also go for the classic (node dist/server/main.js)
 in the later case, do not forget to set `process.env.NODE_ENV` as `production`. Otherwise, the Nuxt server would rebuild !
+
+### Cavats
+
+This project use nuxt2.x package as such, webpack5 is not supported....
+
+Beware when updating the dependencies at these two depencencies. You can't upgrade them more than the listed version.
+* `"webpack": "4.46.0"`
+* `"ts-loader": "8.3.0"`
+
+Yes nest use webpack5 and nuxt webpack4... if you have any idea to improve this. Feel free to contact me.
 
 ## Contributing
 
