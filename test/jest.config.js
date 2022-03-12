@@ -1,22 +1,18 @@
 module.exports = {
-  "moduleFileExtensions": [
-    "js",
-    "json",
-    "ts"
-  ],
-  "moduleNameMapper": {
-    "^@server/(.*)$": "<rootDir>/server/$1",
-    "^client/(.*)$": "<rootDir>/client/$1",
-    "^common/(.*)$": "<rootDir>/common/$1"
+  moduleFileExtensions: ['js', 'json', 'ts'],
+  moduleNameMapper: {
+    '^@server/(.*)$': '<rootDir>/server/$1',
+    '^client/(.*)$': '<rootDir>/client/$1',
+    '^common/(.*)$': '<rootDir>/common/$1',
   },
-  "rootDir": "../",
-  "testMatch": [
+  rootDir: '../',
+  testMatch: [
     '**/__tests__/**/*.(js|ts|tsx)',
     '**/?(*.)+(spec|test).(js|ts|tsx)',
   ],
-  "transform": {
-    "^.+\\.(t|j)s$": "ts-jest"
+  transform: {
+    '^.+\\.(t|j)s$': 'ts-jest',
   },
-  "coverageDirectory": "./coverage",
-  "testEnvironment": "node"
-}
+  coverageDirectory: './coverage',
+  testEnvironment: 'node',
+};

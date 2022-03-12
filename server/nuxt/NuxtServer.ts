@@ -24,7 +24,7 @@ export class NuxtServer {
     return this.instance;
   }
 
-  public async run(shouldBuild: boolean = true): Promise<Nuxt> {
+  public async run(shouldBuild = true): Promise<Nuxt> {
     const willBuild = config.dev && shouldBuild;
 
     if (this.nuxt) {

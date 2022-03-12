@@ -24,7 +24,7 @@ import { Component, Vue } from 'nuxt-property-decorator';
 @Component
 export default class YourComponent extends Vue {
   users: User[] = [];
-  loading: boolean = false;
+  loading = false;
 
   async fetch() {
     return this.fetchUsers();

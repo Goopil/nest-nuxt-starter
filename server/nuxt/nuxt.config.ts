@@ -134,10 +134,12 @@ export const config: NuxtConfig = {
     /*
      ** You can extend webpack config here
      */
+    // eslint-disable-next-line
     extend(cfg, ctx) {
       // config.resolve.alias.vue = 'vue/dist/vue.common'
 
       if (isDev) {
+        // eslint-disable-next-line
         const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
         cfg.resolve = cfg.resolve || {};
 

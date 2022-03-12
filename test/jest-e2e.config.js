@@ -1,8 +1,5 @@
-const cfg = require('./jest.config');
-
 module.exports = {
-  ...cfg,
-  "testMatch": [
-    '**/?(*.)+(e2e-spec|e2e-test).(js|ts|tsx)',
-  ],
-}
+  // eslint-disable-next-line
+  ... require('./jest.config'),
+  testMatch: ['**/?(*.)+(e2e-spec|e2e-test).(js|ts|tsx)'],
+};
