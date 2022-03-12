@@ -2,7 +2,7 @@ import { Controller, Get } from '@nestjs/common';
 import { User } from '@common/UserInterface';
 
 @Controller()
-export class AppController {
+export class ApplicationController {
   @Get('/ping')
   ping(): string {
     return 'pong';
