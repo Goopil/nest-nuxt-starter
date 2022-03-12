@@ -12,7 +12,7 @@ services:
       - '443:443'
       - '443:443/udp'
     environment:
-      BACKEND_HOST: 'app.prod'
+      BACKEND_HOST: 'app.prod:3005'
       HOST_NAME: 'localhost'
     depends_on:
       - app.prod
@@ -22,7 +22,10 @@ services:
   app.prod:
     build: .
     environment:
-      CLUSTER_MODE: 'true'
+      CLUSTER_MODE: 'false'
+      PORT: 3005
+    ports:
+      - '3005:3005'
     networks:
       - default
 
