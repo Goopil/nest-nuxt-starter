@@ -39,7 +39,7 @@ you can use webpack alias (defined in each tsconfig.json and shared with [tsconf
 ### command
 
 * `yarn install`
-* `yarn start:dev`
+* `yarn dev`
 * `yarn build`
 * `yarn start`
 
