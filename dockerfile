@@ -31,8 +31,6 @@ RUN rm -rf node_modules && \
 # production container
 FROM $NODE_IMAGE as production
 
-RUN yarn global add pm2
-
 ENV NODE_ENV=production \
     HOST=0.0.0.0 \
     PORT=80
@@ -41,6 +39,11 @@ EXPOSE ${PORT}
 
 RUN mkdir -p /app
 WORKDIR /app
+
+COPY ./.yarnclean.prod /app/.yarnclean
+
+RUN yarn global add pm2
+RUN yarn cache clean --all
 
 COPY --chown=node:node ./yarn.lock /app/yarn.lock
 COPY --chown=node:node ./package.json /app/package.json
