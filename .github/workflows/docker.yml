@@ -27,4 +27,4 @@ jobs:
 
       - uses: azure/container-scan@v0
         with:
-          image-name: my-image:my-tag
+          image-name: zvolpi/nest-nuxt-starter:latest
