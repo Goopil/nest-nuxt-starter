@@ -5,6 +5,7 @@
   "author": "Goopil <me@goopil.org>",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "main": "dist/server/main.js",
   "scripts": {
     "prebuild": "rimraf dist",
@@ -69,9 +70,5 @@
     "webpack": "4.46.0",
     "webpack-cli": "4.10.0",
     "webpack-node-externals": "3.0.0"
-  },
-  "resolutions": {
-    "ansi-html": ">=0.0.8",
-    "ansi-regex": ">=3.0.1"
   }
 }
