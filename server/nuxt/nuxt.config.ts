@@ -134,8 +134,7 @@ export const config: NuxtConfig = {
     /*
      ** You can extend webpack config here
      */
-    // eslint-disable-next-line
-    extend(cfg, ctx) {
+    extend(cfg /** , ctx */) {
       // config.resolve.alias.vue = 'vue/dist/vue.common'
 
       if (isDev) {
@@ -156,7 +155,7 @@ export const config: NuxtConfig = {
   },
 
   render: {
-    compressor: false,
+    compressor: false, // activate this if there is no proxy compressing the response in front of this server.
     resourceHints: true,
     ssr: true,
     http2: { push: true },
