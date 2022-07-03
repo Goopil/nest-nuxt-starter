@@ -37,6 +37,9 @@ ENV NODE_ENV=production \
 
 EXPOSE ${PORT}
 
+HEALTHCHECK --interval=5m --timeout=3s \
+  CMD curl -f http://localhost:$PORT/ping || exit 1
+
 RUN mkdir -p /app
 WORKDIR /app
 
