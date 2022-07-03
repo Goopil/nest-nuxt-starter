@@ -5,7 +5,6 @@
   "author": "Goopil <me@goopil.org>",
   "license": "MIT",
   "private": true,
-  "type": "module",
   "main": "dist/server/main.js",
   "scripts": {
     "prebuild": "rimraf dist",
