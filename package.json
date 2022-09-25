@@ -9,10 +9,10 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "predev": "rimraf dist",
-    "build:front": "cross-env NODE_ENV=production NODE_OPTIONS=--openssl-legacy-provider nuxt build -c server/nuxt/nuxt.config.ts",
-    "build:back": "cross-env mode=production NODE_ENV=production NODE_OPTIONS=--openssl-legacy-provider nest build --webpack --webpackPath webpack.config.js",
+    "build:front": "cross-env NODE_ENV=production nuxt build -c server/nuxt/nuxt.config.ts",
+    "build:back": "cross-env mode=production NODE_ENV=production nest build --webpack --webpackPath webpack.config.js",
     "build": "concurrently \"yarn build:back\" \"yarn build:front\"",
-    "dev": "cross-env NODE_ENV=development NODE_OPTIONS=--openssl-legacy-provider nest build --webpack --webpackPath webpack.config.js --watch",
+    "dev": "cross-env NODE_ENV=development nest build --webpack --webpackPath webpack.config.js --watch",
     "start": "node dist/server/main",
     "lint": "eslint \"{common,test,server,client}/**/*.{js,ts,vue}\"",
     "format": "yarn run lint --fix",
@@ -71,6 +71,7 @@
     "webpack-node-externals": "3.0.0"
   },
   "resolutions": {
-    "ansi-html": ">=0.0.8"
+    "ansi-html": ">=0.0.8",
+    "parse-url": "6.0.5"
   }
 }
