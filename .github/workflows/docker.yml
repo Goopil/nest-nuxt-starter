@@ -24,7 +24,3 @@ jobs:
         with:
           push: true
           tags: zvolpi/nest-nuxt-starter:latest
-
-      - uses: azure/container-scan@v0
-        with:
-          image-name: zvolpi/nest-nuxt-starter:latest
