@@ -72,6 +72,7 @@
   },
   "resolutions": {
     "ansi-html": ">=0.0.8",
-    "parse-url": "6.0.5"
+    "parse-url": "8.1.0",
+    "terser": "4.8.1"
   }
 }
