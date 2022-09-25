@@ -42,4 +42,7 @@ jobs:
     - run: yarn run lint
     - run: yarn run test:cov
     - run: yarn run e2e:cov
-    - run: yarn run build
+    - if: ${{ matrix.experimental }}
+      run:  NODE_OPTIONS=--openssl-legacy-provider yarn run build
+    - if: ${{ !matrix.experimental }}
+      run: yarn run build
