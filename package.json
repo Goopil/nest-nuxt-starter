@@ -25,7 +25,7 @@
     "audit:fix": "npx yarn-audit-fix"
   },
   "dependencies": {
-    "@nestjs/common": "8.4.7",
+    "@nestjs/common": "11.0.16",
     "@nestjs/core": "8.4.7",
     "@nestjs/platform-express": "8.4.7",
     "@nestjs/platform-fastify": "8.4.7",
