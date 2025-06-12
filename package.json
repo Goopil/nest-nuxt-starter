@@ -27,10 +27,10 @@
   "dependencies": {
     "@nestjs/common": "8.4.7",
     "@nestjs/core": "8.4.7",
-    "@nestjs/platform-express": "8.4.7",
+    "@nestjs/platform-express": "10.4.19",
     "@nestjs/platform-fastify": "8.4.7",
     "@nuxtjs/axios": "5.13.6",
-    "nuxt": "2.15.8",
+    "nuxt": "3.0.0",
     "nuxt-precompress": "0.5.9",
     "nuxt-property-decorator": "2.9.1",
     "reflect-metadata": "0.1.13",
